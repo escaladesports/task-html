@@ -43,7 +43,6 @@ function processFiles(opt){
 				dest = replaceExt(dest, '.html')
 				if(opt.minifyHtml){
 					html = minify(html, opt.minifyHtmlOptions)
-					console.log(html)
 				}
 				fs.outputFile(dest, html, err => {
 					if(err) reject(err)
