@@ -36,9 +36,12 @@ function getFiles(opt){
 function processFiles(opt){
 	return new Promise((resolve, reject) => {
 		const promises = []
+		const now = (new Date).getTime()
 		for(let i = opt.files.length; i--;){
 			promises.push(new Promise((resolve, reject) => {
-				let html = pug.compileFile(opt.files[i])()
+				let html = pug.compileFile(opt.files[i])({
+					deployTime: now
+				})
 				let dest = opt.files[i].replace(opt.src, opt.dist)
 				dest = replaceExt(dest, '.html')
 				if(opt.minifyHtml){
