@@ -10,9 +10,10 @@ module.exports = (config, cb) => {
 	getFiles(config)
 		.then(processFiles)
 		.then(() => {
-			console.log('done!')
+			notify('Pug processed')
+			if(typeof cb === 'function') cb()
 		})
-		.catch(console.error)
+		.catch(error)
 }
 
 
