@@ -4,5 +4,15 @@
   "main": "index.js",
   "repository": "https://github.com/escaladesports/task-html.git",
   "author": "Kennedy Rose <krose@escaladesports.com> (https://escaladesports.com)",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "test": "node test/index"
+  },
+  "dependencies": {
+    "fs-extra": "^3.0.1",
+    "glob-all": "^3.1.0",
+    "pug": "^2.0.0-rc.1",
+    "task-error-notify": "escaladesports/task-error-notify#v1.0.0",
+    "task-notify": "escaladesports/task-notify#v1.1.0"
+  }
 }
